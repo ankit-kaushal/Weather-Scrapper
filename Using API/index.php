@@ -2,7 +2,7 @@
 	error_reporting(E_ALL ^ E_WARNING); 
 	$weather = "";
 	$error = "";
-	if ($_GET['city']){
+	if (array_key_exists('city', $_GET)){
 
 		$urlContents = file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".urlencode($_GET['city'])."&APPID=f42861e511c164f2d1fcf063a6ddd3d2");
 
@@ -40,7 +40,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Weather Scrapper</title>
+    <title>What's The Weather</title>
     <link rel="shortcut icon" href="favicon.png">
 
     <style type="text/css">
